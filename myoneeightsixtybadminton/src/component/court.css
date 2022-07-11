@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: lightgrey;
+}
+
+.court {
+  display: grid;
+  grid-template-rows: 40px 120px 120px 40px;
+  grid-template-columns: 50px 200px 80px 80px 200px 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: solid 1px #fff;
+  color: darkolivegreen;
+  justify-content: center;
+  align-content: center;
+}
+.court > div {
+  border: solid #fff;
+  border-width: 1px 0 0 1px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.court > div:hover {
+  background: #fff;
+}
+.court > div:nth-child(6),
+.court > div:nth-child(12),
+.court > div:nth-child(16),
+.court > div:nth-child(22) {
+  border-right-width: 1px;
+}
+.court > div:nth-last-child(-n + 6) {
+  border-bottom-width: 1px;
+}
+.court > div:nth-child(9),
+.court > div:nth-child(10) {
+  grid-row: 2/4;
+}
+.court > div:nth-child(9) {
+  grid-column: 3;
+}
+.court > div:nth-child(10) {
+  grid-column: 4;
+}
